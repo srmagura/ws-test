@@ -19,6 +19,16 @@ const pubSub = new PubSub();
 
 @Resolver(Org)
 export class OrgResolver {
+  /*
+
+query TestQuery {
+  orgs {
+    id
+  }
+}
+
+*/
+
   @Query(() => [Org])
   orgs() {
     const o = new Org();
@@ -26,6 +36,16 @@ export class OrgResolver {
 
     return [o];
   }
+
+  /*
+
+subscription TestSubscription {
+  orgCreated {
+    id
+  }
+}
+
+*/
 
   @Subscription(() => Org)
   orgCreated() {
