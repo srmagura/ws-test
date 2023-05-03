@@ -9,3 +9,7 @@ type Org {
 type Query {
   orgs: [Org!]!
 }
+
+type Subscription {
+  orgCreated: Org!
+}
