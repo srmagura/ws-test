@@ -4,6 +4,9 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { OrgResolver } from './OrgResolver';
 
+// This is what is shown in the docs, https://docs.nestjs.com/graphql/subscriptions
+// This configuration also matches the TypeScript definitions.
+// But it does not actually work.
 const NotWorkingVersion = GraphQLModule.forRoot<ApolloDriverConfig>({
   driver: ApolloDriver,
   autoSchemaFile: 'schema.gql',
@@ -12,6 +15,8 @@ const NotWorkingVersion = GraphQLModule.forRoot<ApolloDriverConfig>({
   },
 });
 
+// This configuration does NOT match the docs or the TypeScript definitions.
+// But it actually works.
 const WorkingVersion = GraphQLModule.forRoot<ApolloDriverConfig>({
   driver: ApolloDriver,
   autoSchemaFile: 'schema.gql',
