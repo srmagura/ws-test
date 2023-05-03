@@ -9,6 +9,7 @@ import { OrgResolver } from './OrgResolver';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
+      // installSubscriptionHandlers: true,
       subscriptions: {
         'graphql-ws': true,
       },
